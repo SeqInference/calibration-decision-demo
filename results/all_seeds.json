@@ -1,0 +1,1622 @@
+[
+  {
+    "seed": 42,
+    "partition_counts": {
+      "n_total": 10000,
+      "n_train": 6000,
+      "n_calib": 2000,
+      "n_test": 2000,
+      "train_positive": 1840,
+      "calib_positive": 613,
+      "test_positive": 613
+    },
+    "train_positive_rate": 0.30666666666666664,
+    "methods": {
+      "raw": {
+        "method": "raw",
+        "metrics": {
+          "brier_score": 0.15026644918560633,
+          "log_loss": 0.4951489647322248,
+          "accuracy": 0.798
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.798,
+            "accepted_error_rate": 0.20199999999999996
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.922,
+            "accepted_count": 1844,
+            "accepted_accuracy": 0.8188720173535792,
+            "accepted_error_rate": 0.18112798264642083
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.83,
+            "accepted_count": 1660,
+            "accepted_accuracy": 0.8391566265060241,
+            "accepted_error_rate": 0.16084337349397593
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.7085,
+            "accepted_count": 1417,
+            "accepted_accuracy": 0.8687367678193366,
+            "accepted_error_rate": 0.13126323218066338
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.5355,
+            "accepted_count": 1071,
+            "accepted_accuracy": 0.8954248366013072,
+            "accepted_error_rate": 0.10457516339869277
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3093197903339178,
+          "std": 0.3363424262497009,
+          "min": 1.6555411607967355e-05,
+          "max": 0.9999990760129057
+        }
+      },
+      "calibrated": {
+        "method": "calibrated",
+        "metrics": {
+          "brier_score": 0.1454093391715765,
+          "log_loss": 0.4563590332337158,
+          "accuracy": 0.799
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.799,
+            "accepted_error_rate": 0.20099999999999996
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.9255,
+            "accepted_count": 1851,
+            "accepted_accuracy": 0.8211777417612102,
+            "accepted_error_rate": 0.17882225823878983
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.8315,
+            "accepted_count": 1663,
+            "accepted_accuracy": 0.8436560432952496,
+            "accepted_error_rate": 0.15634395670475043
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.674,
+            "accepted_count": 1348,
+            "accepted_accuracy": 0.8857566765578635,
+            "accepted_error_rate": 0.1142433234421365
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.1315,
+            "accepted_count": 263,
+            "accepted_accuracy": 0.9391634980988594,
+            "accepted_error_rate": 0.06083650190114065
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3024135232457128,
+          "std": 0.25896001696023124,
+          "min": 0.09507629433988092,
+          "max": 0.8378927503719266
+        }
+      },
+      "baseline": {
+        "method": "baseline",
+        "metrics": {
+          "brier_score": 0.2125577777777778,
+          "log_loss": 0.6162716175178061,
+          "accuracy": 0.6935
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.6935,
+            "accepted_error_rate": 0.3065
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.6935,
+            "accepted_error_rate": 0.3065
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.30666666666666664,
+          "std": 0.0,
+          "min": 0.30666666666666664,
+          "max": 0.30666666666666664
+        }
+      }
+    },
+    "reliability": {
+      "raw": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          838,
+          272,
+          166,
+          112,
+          83,
+          73,
+          72,
+          77,
+          74,
+          233
+        ],
+        "mean_predicted": [
+          0.03419880139019648,
+          0.14251494396905837,
+          0.24733205849628961,
+          0.3457103577169157,
+          0.4546824711113133,
+          0.5488906673957398,
+          0.652218507975049,
+          0.7477640266402985,
+          0.8472241999187933,
+          0.9716756280127177
+        ],
+        "fraction_positive": [
+          0.09904534606205251,
+          0.16911764705882354,
+          0.2891566265060241,
+          0.32142857142857145,
+          0.37349397590361444,
+          0.4657534246575342,
+          0.5694444444444444,
+          0.5714285714285714,
+          0.6216216216216216,
+          0.8755364806866953
+        ]
+      },
+      "calibrated": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          263,
+          887,
+          199,
+          99,
+          79,
+          70,
+          89,
+          116,
+          198,
+          0
+        ],
+        "mean_predicted": [
+          0.09708389212634407,
+          0.1292078252245936,
+          0.24218934752097174,
+          0.3486864611291565,
+          0.44629990602006553,
+          0.5461353272160511,
+          0.6446455793528516,
+          0.7522573436030511,
+          0.8275178190831122,
+          null
+        ],
+        "fraction_positive": [
+          0.060836501901140684,
+          0.13641488162344984,
+          0.31155778894472363,
+          0.36363636363636365,
+          0.45569620253164556,
+          0.5,
+          0.6067415730337079,
+          0.6206896551724138,
+          0.9141414141414141,
+          null
+        ]
+      },
+      "baseline": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          2000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_predicted": [
+          null,
+          null,
+          null,
+          0.30666666666666664,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "fraction_positive": [
+          null,
+          null,
+          null,
+          0.3065,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')"
+  },
+  {
+    "seed": 43,
+    "partition_counts": {
+      "n_total": 10000,
+      "n_train": 6000,
+      "n_calib": 2000,
+      "n_test": 2000,
+      "train_positive": 1867,
+      "calib_positive": 622,
+      "test_positive": 622
+    },
+    "train_positive_rate": 0.31116666666666665,
+    "methods": {
+      "raw": {
+        "method": "raw",
+        "metrics": {
+          "brier_score": 0.18053959329382485,
+          "log_loss": 0.5641132153531182,
+          "accuracy": 0.736
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.736,
+            "accepted_error_rate": 0.264
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.8705,
+            "accepted_count": 1741,
+            "accepted_accuracy": 0.7696726019529007,
+            "accepted_error_rate": 0.23032739804709934
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.753,
+            "accepted_count": 1506,
+            "accepted_accuracy": 0.7928286852589641,
+            "accepted_error_rate": 0.2071713147410359
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.608,
+            "accepted_count": 1216,
+            "accepted_accuracy": 0.8445723684210527,
+            "accepted_error_rate": 0.15542763157894735
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.42,
+            "accepted_count": 840,
+            "accepted_accuracy": 0.8964285714285715,
+            "accepted_error_rate": 0.10357142857142854
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3554081061250177,
+          "std": 0.3282473312304182,
+          "min": 2.435745804495239e-07,
+          "max": 0.9994395580171478
+        }
+      },
+      "calibrated": {
+        "method": "calibrated",
+        "metrics": {
+          "brier_score": 0.16922561353389495,
+          "log_loss": 0.5092580043346651,
+          "accuracy": 0.745
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.745,
+            "accepted_error_rate": 0.255
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.877,
+            "accepted_count": 1754,
+            "accepted_accuracy": 0.7753705815279361,
+            "accepted_error_rate": 0.22462941847206386
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.7375,
+            "accepted_count": 1475,
+            "accepted_accuracy": 0.8244067796610169,
+            "accepted_error_rate": 0.17559322033898306
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.533,
+            "accepted_count": 1066,
+            "accepted_accuracy": 0.8639774859287055,
+            "accepted_error_rate": 0.1360225140712945
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.278,
+            "accepted_count": 556,
+            "accepted_accuracy": 0.9406474820143885,
+            "accepted_error_rate": 0.059352517985611475
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3131869669550171,
+          "std": 0.24914141914071014,
+          "min": 0.0812898991790997,
+          "max": 0.8175262127455817
+        }
+      },
+      "baseline": {
+        "method": "baseline",
+        "metrics": {
+          "brier_score": 0.2142790277777778,
+          "log_loss": 0.6198985123701327,
+          "accuracy": 0.689
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.689,
+            "accepted_error_rate": 0.31100000000000005
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.689,
+            "accepted_error_rate": 0.31100000000000005
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.31116666666666676,
+          "std": 1.1102230246251565e-16,
+          "min": 0.31116666666666665,
+          "max": 0.31116666666666665
+        }
+      }
+    },
+    "reliability": {
+      "raw": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          675,
+          234,
+          161,
+          130,
+          122,
+          137,
+          105,
+          129,
+          142,
+          165
+        ],
+        "mean_predicted": [
+          0.026614233463226354,
+          0.1464076455879851,
+          0.24855160842230864,
+          0.34975838797808106,
+          0.446864466495346,
+          0.5544697036108038,
+          0.6485975462504582,
+          0.7524546395717864,
+          0.8530057716618554,
+          0.9474593421665001
+        ],
+        "fraction_positive": [
+          0.07555555555555556,
+          0.21794871794871795,
+          0.2857142857142857,
+          0.3,
+          0.4016393442622951,
+          0.4306569343065693,
+          0.5238095238095238,
+          0.40310077519379844,
+          0.6408450704225352,
+          0.7818181818181819
+        ]
+      },
+      "calibrated": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          556,
+          461,
+          185,
+          139,
+          135,
+          111,
+          140,
+          224,
+          49,
+          0
+        ],
+        "mean_predicted": [
+          0.0860237423755509,
+          0.13932008193443265,
+          0.24647520081177005,
+          0.34684448188384925,
+          0.45164966285544644,
+          0.5489462151351072,
+          0.6492105103767293,
+          0.7505312794274325,
+          0.8080544456214849,
+          null
+        ],
+        "fraction_positive": [
+          0.05935251798561151,
+          0.23427331887201736,
+          0.24864864864864866,
+          0.39568345323741005,
+          0.45925925925925926,
+          0.5135135135135135,
+          0.42857142857142855,
+          0.6964285714285714,
+          0.9183673469387755,
+          null
+        ]
+      },
+      "baseline": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          2000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_predicted": [
+          null,
+          null,
+          null,
+          0.31116666666666676,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "fraction_positive": [
+          null,
+          null,
+          null,
+          0.311,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')"
+  },
+  {
+    "seed": 44,
+    "partition_counts": {
+      "n_total": 10000,
+      "n_train": 6000,
+      "n_calib": 2000,
+      "n_test": 2000,
+      "train_positive": 1856,
+      "calib_positive": 619,
+      "test_positive": 619
+    },
+    "train_positive_rate": 0.30933333333333335,
+    "methods": {
+      "raw": {
+        "method": "raw",
+        "metrics": {
+          "brier_score": 0.14403526621517346,
+          "log_loss": 0.4928216857703525,
+          "accuracy": 0.808
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.808,
+            "accepted_error_rate": 0.19199999999999995
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.9195,
+            "accepted_count": 1839,
+            "accepted_accuracy": 0.8281674823273518,
+            "accepted_error_rate": 0.17183251767264818
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.8385,
+            "accepted_count": 1677,
+            "accepted_accuracy": 0.8497316636851521,
+            "accepted_error_rate": 0.15026833631484793
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.7485,
+            "accepted_count": 1497,
+            "accepted_accuracy": 0.8697394789579158,
+            "accepted_error_rate": 0.1302605210420842
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.592,
+            "accepted_count": 1184,
+            "accepted_accuracy": 0.9037162162162162,
+            "accepted_error_rate": 0.09628378378378377
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3319956889799848,
+          "std": 0.36241354512922197,
+          "min": 3.244166000885934e-05,
+          "max": 0.9999760782727456
+        }
+      },
+      "calibrated": {
+        "method": "calibrated",
+        "metrics": {
+          "brier_score": 0.13757053285551882,
+          "log_loss": 0.4341447372116457,
+          "accuracy": 0.8075
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.8075,
+            "accepted_error_rate": 0.1925
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.924,
+            "accepted_count": 1848,
+            "accepted_accuracy": 0.829004329004329,
+            "accepted_error_rate": 0.17099567099567103
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.847,
+            "accepted_count": 1694,
+            "accepted_accuracy": 0.8524203069657615,
+            "accepted_error_rate": 0.14757969303423846
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.688,
+            "accepted_count": 1376,
+            "accepted_accuracy": 0.8902616279069767,
+            "accepted_error_rate": 0.10973837209302328
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.3615,
+            "accepted_count": 723,
+            "accepted_accuracy": 0.9336099585062241,
+            "accepted_error_rate": 0.06639004149377592
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.31484399716382433,
+          "std": 0.28380773810112336,
+          "min": 0.08351995441297415,
+          "max": 0.841805575820292
+        }
+      },
+      "baseline": {
+        "method": "baseline",
+        "metrics": {
+          "brier_score": 0.21370977777777778,
+          "log_loss": 0.6187000852194601,
+          "accuracy": 0.6905
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.6905,
+            "accepted_error_rate": 0.3095
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.6905,
+            "accepted_error_rate": 0.3095
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.30933333333333335,
+          "std": 0.0,
+          "min": 0.30933333333333335,
+          "max": 0.30933333333333335
+        }
+      }
+    },
+    "reliability": {
+      "raw": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          900,
+          191,
+          121,
+          90,
+          85,
+          76,
+          72,
+          59,
+          122,
+          284
+        ],
+        "mean_predicted": [
+          0.02689001063736625,
+          0.14386614435711442,
+          0.25387518757714966,
+          0.3514416335339268,
+          0.4545744528574869,
+          0.5498147757671997,
+          0.6535765213040151,
+          0.7439096332859049,
+          0.853843746219917,
+          0.9662726187023298
+        ],
+        "fraction_positive": [
+          0.07555555555555556,
+          0.17277486910994763,
+          0.256198347107438,
+          0.3333333333333333,
+          0.38823529411764707,
+          0.5394736842105263,
+          0.5277777777777778,
+          0.559322033898305,
+          0.6065573770491803,
+          0.8380281690140845
+        ]
+      },
+      "calibrated": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          723,
+          422,
+          141,
+          91,
+          79,
+          73,
+          63,
+          177,
+          231,
+          0
+        ],
+        "mean_predicted": [
+          0.08879756375222833,
+          0.1330909567573916,
+          0.24592290690105095,
+          0.35260944261935806,
+          0.4495071709999825,
+          0.5559151627817727,
+          0.6459237966039563,
+          0.758479999818835,
+          0.8291054124922401,
+          null
+        ],
+        "fraction_positive": [
+          0.06639004149377593,
+          0.15639810426540285,
+          0.2907801418439716,
+          0.4175824175824176,
+          0.46835443037974683,
+          0.5616438356164384,
+          0.5555555555555556,
+          0.672316384180791,
+          0.8398268398268398,
+          null
+        ]
+      },
+      "baseline": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          2000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_predicted": [
+          null,
+          null,
+          null,
+          0.30933333333333335,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "fraction_positive": [
+          null,
+          null,
+          null,
+          0.3095,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')"
+  },
+  {
+    "seed": 45,
+    "partition_counts": {
+      "n_total": 10000,
+      "n_train": 6000,
+      "n_calib": 2000,
+      "n_test": 2000,
+      "train_positive": 1860,
+      "calib_positive": 620,
+      "test_positive": 620
+    },
+    "train_positive_rate": 0.31,
+    "methods": {
+      "raw": {
+        "method": "raw",
+        "metrics": {
+          "brier_score": 0.11809537127513894,
+          "log_loss": 0.3983459092834123,
+          "accuracy": 0.84
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.84,
+            "accepted_error_rate": 0.16000000000000003
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.925,
+            "accepted_count": 1850,
+            "accepted_accuracy": 0.8654054054054054,
+            "accepted_error_rate": 0.13459459459459455
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.8435,
+            "accepted_count": 1687,
+            "accepted_accuracy": 0.8838174273858921,
+            "accepted_error_rate": 0.11618257261410792
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.739,
+            "accepted_count": 1478,
+            "accepted_accuracy": 0.9100135317997293,
+            "accepted_error_rate": 0.08998646820027068
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.5995,
+            "accepted_count": 1199,
+            "accepted_accuracy": 0.9291075896580484,
+            "accepted_error_rate": 0.0708924103419516
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.30409994771444543,
+          "std": 0.348136116663763,
+          "min": 3.6003152451696283e-06,
+          "max": 0.9999906352730026
+        }
+      },
+      "calibrated": {
+        "method": "calibrated",
+        "metrics": {
+          "brier_score": 0.1177540457039926,
+          "log_loss": 0.3837935323489659,
+          "accuracy": 0.8395
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.8395,
+            "accepted_error_rate": 0.16049999999999998
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.934,
+            "accepted_count": 1868,
+            "accepted_accuracy": 0.8624197002141327,
+            "accepted_error_rate": 0.13758029978586728
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.865,
+            "accepted_count": 1730,
+            "accepted_accuracy": 0.8803468208092485,
+            "accepted_error_rate": 0.11965317919075147
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.759,
+            "accepted_count": 1518,
+            "accepted_accuracy": 0.9104084321475626,
+            "accepted_error_rate": 0.08959156785243738
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.412,
+            "accepted_count": 824,
+            "accepted_accuracy": 0.9393203883495146,
+            "accepted_error_rate": 0.06067961165048541
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3106964135445713,
+          "std": 0.3027187120868929,
+          "min": 0.07600593042102702,
+          "max": 0.9000633480820451
+        }
+      },
+      "baseline": {
+        "method": "baseline",
+        "metrics": {
+          "brier_score": 0.21389999999999992,
+          "log_loss": 0.619100664425587,
+          "accuracy": 0.69
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.69,
+            "accepted_error_rate": 0.31000000000000005
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.69,
+            "accepted_error_rate": 0.31000000000000005
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.31,
+          "std": 0.0,
+          "min": 0.31,
+          "max": 0.31
+        }
+      }
+    },
+    "reliability": {
+      "raw": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          951,
+          199,
+          133,
+          89,
+          76,
+          74,
+          74,
+          76,
+          80,
+          248
+        ],
+        "mean_predicted": [
+          0.02900174540164099,
+          0.14579691997471572,
+          0.24469589549695459,
+          0.3484772014438779,
+          0.45200705083871434,
+          0.5428008358771169,
+          0.6514876855504947,
+          0.7538929805372439,
+          0.8538500580735867,
+          0.9665841364163656
+        ],
+        "fraction_positive": [
+          0.06624605678233439,
+          0.1507537688442211,
+          0.2556390977443609,
+          0.3595505617977528,
+          0.4605263157894737,
+          0.5135135135135135,
+          0.7162162162162162,
+          0.618421052631579,
+          0.775,
+          0.9112903225806451
+        ]
+      },
+      "calibrated": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          814,
+          395,
+          123,
+          71,
+          78,
+          54,
+          67,
+          89,
+          299,
+          10
+        ],
+        "mean_predicted": [
+          0.08332244392858536,
+          0.13581658030783184,
+          0.24355209207939754,
+          0.3478587415105798,
+          0.4506515890420137,
+          0.5520506420873575,
+          0.6505272380738941,
+          0.7520267444432435,
+          0.8722016761733983,
+          0.9000365536423424
+        ],
+        "fraction_positive": [
+          0.06142506142506143,
+          0.1341772151898734,
+          0.3008130081300813,
+          0.43661971830985913,
+          0.5128205128205128,
+          0.5555555555555556,
+          0.7164179104477612,
+          0.6179775280898876,
+          0.8896321070234113,
+          1.0
+        ]
+      },
+      "baseline": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          2000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_predicted": [
+          null,
+          null,
+          null,
+          0.31,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "fraction_positive": [
+          null,
+          null,
+          null,
+          0.31,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')"
+  },
+  {
+    "seed": 46,
+    "partition_counts": {
+      "n_total": 10000,
+      "n_train": 6000,
+      "n_calib": 2000,
+      "n_test": 2000,
+      "train_positive": 1846,
+      "calib_positive": 615,
+      "test_positive": 616
+    },
+    "train_positive_rate": 0.30766666666666664,
+    "methods": {
+      "raw": {
+        "method": "raw",
+        "metrics": {
+          "brier_score": 0.11477577839729505,
+          "log_loss": 0.3945635081543009,
+          "accuracy": 0.853
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.853,
+            "accepted_error_rate": 0.14700000000000002
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.9495,
+            "accepted_count": 1899,
+            "accepted_accuracy": 0.8683517640863613,
+            "accepted_error_rate": 0.13164823591363872
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.881,
+            "accepted_count": 1762,
+            "accepted_accuracy": 0.8825198637911464,
+            "accepted_error_rate": 0.11748013620885356
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.7835,
+            "accepted_count": 1567,
+            "accepted_accuracy": 0.9042756860242501,
+            "accepted_error_rate": 0.09572431397574988
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.634,
+            "accepted_count": 1268,
+            "accepted_accuracy": 0.9258675078864353,
+            "accepted_error_rate": 0.07413249211356465
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.2842466230897355,
+          "std": 0.3484235452443957,
+          "min": 0.00010962336881731494,
+          "max": 0.9999999998178097
+        }
+      },
+      "calibrated": {
+        "method": "calibrated",
+        "metrics": {
+          "brier_score": 0.1140571978252604,
+          "log_loss": 0.37672701926028695,
+          "accuracy": 0.8525
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.8525,
+            "accepted_error_rate": 0.14749999999999996
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 0.9575,
+            "accepted_count": 1915,
+            "accepted_accuracy": 0.8673629242819844,
+            "accepted_error_rate": 0.13263707571801564
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.9035,
+            "accepted_count": 1807,
+            "accepted_accuracy": 0.8754842280022136,
+            "accepted_error_rate": 0.1245157719977864
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.8075,
+            "accepted_count": 1615,
+            "accepted_accuracy": 0.8990712074303405,
+            "accepted_error_rate": 0.10092879256965948
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.4925,
+            "accepted_count": 985,
+            "accepted_accuracy": 0.9370558375634518,
+            "accepted_error_rate": 0.06294416243654821
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.3037515923778042,
+          "std": 0.3092232140826687,
+          "min": 0.07936204590771792,
+          "max": 0.9179541243562084
+        }
+      },
+      "baseline": {
+        "method": "baseline",
+        "metrics": {
+          "brier_score": 0.21313611111111105,
+          "log_loss": 0.6174913253010984,
+          "accuracy": 0.692
+        },
+        "selective": [
+          {
+            "threshold": 0.5,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.692,
+            "accepted_error_rate": 0.30800000000000005
+          },
+          {
+            "threshold": 0.6,
+            "coverage": 1.0,
+            "accepted_count": 2000,
+            "accepted_accuracy": 0.692,
+            "accepted_error_rate": 0.30800000000000005
+          },
+          {
+            "threshold": 0.7,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.8,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          },
+          {
+            "threshold": 0.9,
+            "coverage": 0.0,
+            "accepted_count": 0,
+            "accepted_accuracy": "unavailable",
+            "accepted_error_rate": "unavailable"
+          }
+        ],
+        "probability_summary": {
+          "mean": 0.30766666666666664,
+          "std": 0.0,
+          "min": 0.30766666666666664,
+          "max": 0.30766666666666664
+        }
+      }
+    },
+    "reliability": {
+      "raw": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          996,
+          238,
+          136,
+          94,
+          52,
+          49,
+          43,
+          59,
+          61,
+          272
+        ],
+        "mean_predicted": [
+          0.030651396065236706,
+          0.14300363880416142,
+          0.24076147566265652,
+          0.3448510657191564,
+          0.44778483943230685,
+          0.5456688939527651,
+          0.6522865297324058,
+          0.7469994088223347,
+          0.8534126859952471,
+          0.9726764029282942
+        ],
+        "fraction_positive": [
+          0.07931726907630522,
+          0.19327731092436976,
+          0.27941176470588236,
+          0.3191489361702128,
+          0.38461538461538464,
+          0.5102040816326531,
+          0.6976744186046512,
+          0.6779661016949152,
+          0.8360655737704918,
+          0.9448529411764706
+        ]
+      },
+      "calibrated": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          782,
+          496,
+          125,
+          71,
+          43,
+          42,
+          37,
+          67,
+          134,
+          203
+        ],
+        "mean_predicted": [
+          0.08638799954438874,
+          0.13564733261219894,
+          0.245031077026275,
+          0.3411157343758349,
+          0.4455931628181522,
+          0.543516993329275,
+          0.6486468673701575,
+          0.7533961758496055,
+          0.8654132393456033,
+          0.9132390083711164
+        ],
+        "fraction_positive": [
+          0.06905370843989769,
+          0.16733870967741934,
+          0.312,
+          0.28169014084507044,
+          0.4186046511627907,
+          0.4523809523809524,
+          0.7567567567567568,
+          0.6567164179104478,
+          0.8656716417910447,
+          0.9605911330049262
+        ]
+      },
+      "baseline": {
+        "bin_edges": [
+          0.0,
+          0.1,
+          0.2,
+          0.30000000000000004,
+          0.4,
+          0.5,
+          0.6000000000000001,
+          0.7000000000000001,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "counts": [
+          0,
+          0,
+          0,
+          2000,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "mean_predicted": [
+          null,
+          null,
+          null,
+          0.30766666666666664,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "fraction_positive": [
+          null,
+          null,
+          null,
+          0.308,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')"
+  }
+]

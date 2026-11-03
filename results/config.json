@@ -1,0 +1,37 @@
+{
+  "dataset": "sklearn.datasets.make_classification (synthetic)",
+  "n_samples": 10000,
+  "n_features": 20,
+  "n_informative": 10,
+  "n_redundant": 5,
+  "weights": [
+    0.7,
+    0.3
+  ],
+  "class_sep": 0.8,
+  "flip_y": 0.05,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "train_size": 0.6,
+  "calib_size": 0.2,
+  "test_size": 0.2,
+  "base_estimator": "GaussianNB",
+  "calibration": "sigmoid (Platt scaling) on a frozen/prefit GaussianNB",
+  "baseline": "constant probability equal to training positive-class frequency",
+  "evaluation_split": "untouched test partition only",
+  "confidence": "max(p, 1-p)",
+  "confidence_thresholds": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "threshold_selection": "predefined; not tuned on test results",
+  "reliability_bins": 10
+}

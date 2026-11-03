@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Pytest temporary cache directories created outside .pytest_cache
+pytest-cache-files-*/
