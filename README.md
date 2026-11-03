@@ -163,9 +163,9 @@ commands in this project's `.venv`. This disclosure does not claim that the
 repository author independently reviewed the code or results.
 
 ## Your interpretation
+Sigmoid calibration improved Brier score and log loss across all five tested seeds, while classification accuracy remained mixed. This shows that improving probability estimates does not necessarily improve the number of correct classifications.
 
-<!-- AUTHOR INTERPRETATION: replace this section with your own reading of the
-results. Do not treat the bullets above as a conclusion about SI systems,
-production risk, or any non-synthetic task. -->
+At the 0.90 confidence threshold, calibration reduced accepted error but also reduced coverage. The calibrated model answered fewer cases, so this result does not establish better performance at comparable coverage. A useful next experiment would compare error rates at matched coverage and examine whether the findings hold on a real dataset.
+
 
 _Reserved for the repository author._
