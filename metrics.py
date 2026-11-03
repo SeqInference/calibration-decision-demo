@@ -147,6 +147,70 @@ def selective_prediction(
     }
 
 
+def confidence_tie_summary(probabilities: Any) -> dict[str, int]:
+    """Count duplicate confidence values. Constant predictors produce one large tie."""
+    conf = np.round(confidence(probabilities), decimals=12)
+    _, counts = np.unique(conf, return_counts=True)
+    tied = counts[counts > 1]
+    return {
+        "n_unique_confidences": int(counts.shape[0]),
+        "n_tied_examples": int(np.sum(tied)) if tied.size else 0,
+        "max_tie_group_size": int(np.max(counts)),
+        "n_tie_groups": int(tied.shape[0]),
+    }
+
+
+def matched_coverage_selection(
+    labels: Any,
+    probabilities: Any,
+    coverage: float,
+    row_indices: Any,
+) -> dict[str, float | int | str | bool]:
+    """Accept one method's own top `coverage` fraction by confidence, without labels.
+
+    This is a retrospective diagnostic: the accepted set is chosen from a
+    ranking of already-scored examples for that method. It does not select
+    the same rows across methods, and it is not a deployment-ready threshold
+    that can be applied to a future stream without a ranking of that stream.
+
+    Ties in confidence are broken by original row index, ascending, so the
+    outcome is deterministic. For a constant baseline every example has the
+    same confidence, so the subset is an arbitrary index-selected reference
+    set rather than a confidence-based selection.
+    """
+    y, p = _align_inputs(labels, probabilities)
+    indices = np.asarray(row_indices)
+    if indices.shape[0] != y.shape[0]:
+        raise ValueError("row_indices must have the same length as labels")
+    if not np.isfinite(coverage):
+        raise ValueError("coverage must be finite")
+    if coverage <= 0.0 or coverage > 1.0:
+        raise ValueError("coverage must lie in (0, 1]")
+    n = int(y.shape[0])
+    k = int(round(coverage * n))
+    if k < 1:
+        raise ValueError("coverage selected zero examples")
+    conf = confidence(p)
+    order = np.lexsort((indices, -conf))
+    selected = order[:k]
+    cutoff_conf = float(conf[selected[-1]])
+    n_at_cutoff = int(np.sum(np.isclose(conf, cutoff_conf, rtol=0.0, atol=1e-12)))
+    acc = accuracy(y[selected], p[selected])
+    ties = confidence_tie_summary(p)
+    return {
+        "target_coverage": float(coverage),
+        "accepted_count": int(k),
+        "realized_coverage": float(k / n),
+        "accepted_accuracy": acc,
+        "accepted_error_rate": float(1.0 - acc),
+        "cutoff_confidence": cutoff_conf,
+        "n_at_cutoff_confidence": n_at_cutoff,
+        "cutoff_tie": bool(n_at_cutoff > 1),
+        "selected_row_indices": indices[selected].tolist(),
+        **ties,
+    }
+
+
 def evaluate_probability_metrics(labels: Any, probabilities: Any) -> dict[str, float]:
     y, p = _align_inputs(labels, probabilities)
     return {

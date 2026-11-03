@@ -155,12 +155,155 @@ Plots and tables are under `results/`:
   financial decisions, LLM systems, or operational selective-prediction
   systems.
 
+## Feature-corruption stress test (synthetic)
+
+**Question.** Does sigmoid calibration fitted on **clean** calibration data
+remain useful as **test features** become noisier, when **test labels are
+held fixed**?
+
+This is synthetic **measurement-corruption** testing: Gaussian noise is added
+to copies of test features. Unchanged labels mean the original class is still
+the target; only the observed inputs degrade. That is **not** covariate shift
+in general, **not** label shift, and it does **not** establish robustness to
+real distribution shift, financial performance, or LLM performance.
+
+### Protocol
+
+The original generator, seeds `[42, 43, 44, 45, 46]`, 60/20/20 disjoint
+partitions, `GaussianNB` (train only), and sigmoid calibration on the frozen
+base estimator (calibration data only) are reused. The fitted model and
+calibrator are **frozen** across noise conditions. Feature standard deviations
+come from **training data only** (`ddof=0`). Test copies are evaluated at noise
+scales `[0.00, 0.25, 0.50, 1.00]` times those standard deviations:
+
+`X_corrupted = X_test + scale * train_std * Z`
+
+`Z` is one standard-normal array per seed, drawn from
+`numpy.random.Generator(PCG64)` seeded by
+`SeedSequence([seed, 0x53484946])` (`0x53484946` is ASCII `SHIF`). The same
+`Z` is reused across scales. Original arrays are never modified. Raw,
+calibrated, and training-prior baseline probabilities are scored on each
+corrupted copy. Nothing is refit or retuned on test data.
+
+Matched coverage at `[0.25, 0.50, 0.75, 1.00]` is a **retrospective
+diagnostic**, not a deployment-ready threshold. For each method, the accepted
+set is that method's **own** top-confidence fraction of already-scored rows
+(`max(p, 1-p)`), chosen **without labels**. Methods are therefore **not**
+compared on identical accepted examples. Ties are broken by original dataset
+row index (ascending).
+
+The constant training-prior baseline assigns the same probability to every
+row, so every confidence is tied. Its matched-coverage subset is an
+**arbitrary index-selected reference subset**, not a confidence-based
+selection.
+
+### Reproduction
+
+```powershell
+.\.venv\Scripts\python.exe -m pytest test_metrics.py test_shift_demo.py -v
+.\.venv\Scripts\python.exe shift_demo.py --output-dir results_shift
+```
+
+Do not write this experiment into `results/`.
+
+```powershell
+$tmp = Join-Path $env:TEMP "calibration-decision-demo-shift-repro"
+.\.venv\Scripts\python.exe shift_demo.py --output-dir $tmp
+.\.venv\Scripts\python.exe shift_demo.py --compare results_shift $tmp
+```
+
+`--compare` recursively loads every `.json` and `.csv` under the two output
+directories. In this run that is:
+
+- `config.json`, `all_seeds.json`, `summary.json`
+- `per_seed_metrics.csv`, `per_seed_selective.csv`, `per_seed_matched_coverage.csv`
+- `summary_metrics.csv`, `summary_selective.csv`, `summary_matched_coverage.csv`
+- each `seed_*/metrics.json`, `selective_prediction.csv`, `matched_coverage.csv`,
+  and `metrics_by_scale.csv`
+
+**Excluded:** all PNG plots (raster rendering) and `versions.json` (environment
+metadata, not experiment metrics). No other JSON/CSV files are produced under
+`results_shift/`.
+
+### Actual shift results (this run)
+
+**Scale `0.00` vs original `results/`.** Per-seed Brier, log loss, accuracy, and
+training positive rate for raw, calibrated, and baseline match
+`results/per_seed_metrics.csv` exactly (same floating-point values). Five-seed
+means therefore also match the original summary.
+
+The table is a **five-seed mean ± standard deviation**. Those values are
+descriptive summaries of seeds `[42, 43, 44, 45, 46]`, not confidence
+intervals. Per-seed exceptions are listed separately below.
+
+| Scale | Method     | Brier            | Log loss         | Accuracy         |
+|-------|------------|------------------|------------------|------------------|
+| 0.00  | raw        | 0.1415 ± 0.0268  | 0.4690 ± 0.0722  | 0.8070 ± 0.0456  |
+| 0.00  | calibrated | 0.1368 ± 0.0224  | 0.4321 ± 0.0546  | 0.8087 ± 0.0419  |
+| 0.00  | baseline   | 0.2135 ± 0.0007  | 0.6183 ± 0.0014  | 0.6910 ± 0.0018  |
+| 0.25  | raw        | 0.1456 ± 0.0261  | 0.4856 ± 0.0708  | 0.8022 ± 0.0463  |
+| 0.25  | calibrated | 0.1398 ± 0.0219  | 0.4402 ± 0.0529  | 0.8067 ± 0.0418  |
+| 0.50  | raw        | 0.1581 ± 0.0231  | 0.5340 ± 0.0655  | 0.7825 ± 0.0397  |
+| 0.50  | calibrated | 0.1501 ± 0.0191  | 0.4661 ± 0.0460  | 0.7902 ± 0.0344  |
+| 1.00  | raw        | 0.2063 ± 0.0127  | 0.7592 ± 0.0449  | 0.7290 ± 0.0183  |
+| 1.00  | calibrated | 0.1887 ± 0.0143  | 0.5673 ± 0.0382  | 0.7353 ± 0.0218  |
+| *     | baseline   | unchanged        | unchanged        | unchanged        |
+
+**Five-seed mean comparisons** (not a claim about every seed):
+
+- Mean Brier, log loss, and accuracy for raw and calibrated **worsen** as the
+  noise scale increases. The calibrator was not retuned on corrupted inputs.
+- Mean calibrated Brier and log loss remain **lower than mean raw** at every
+  tested scale, including `1.00`. That is not robustness: at scale `1.00` mean
+  calibrated Brier is about `+0.052` and mean log loss about `+0.135` versus
+  clean data.
+- At scale `1.00`, **mean raw log loss (`0.759`) is worse than the constant
+  baseline (`0.618`)**. Mean calibrated log loss (`0.567`) is still better than
+  that baseline on this five-seed average, with a smaller gap than at scale
+  `0.00`.
+- Mean matched-coverage accepted error at target coverage `0.25` rises with
+  noise (calibrated `0.055` clean vs `0.100` at scale `1.00`; raw `0.051` vs
+  `0.119`). Each method is ranked on its own scores; these are not the same
+  accepted rows.
+
+**Per-seed findings** (do not treat as the five-seed mean):
+
+- On **every** tested seed, calibrated Brier and log loss are lower than raw
+  at every noise scale, including `1.00`.
+- Accuracy does **not** worsen on every seed. At scale `0.25`, seed 44
+  calibrated accuracy is `0.8105` vs `0.8075` clean.
+- At scale `1.00`, **every** seed has raw log loss worse than the baseline.
+  Calibrated log loss remains better than the baseline on each of the five
+  seeds.
+- On **seed 43** at scale `1.00`, raw Brier (`0.224`) is **worse** than the
+  baseline (`0.214`). On the other four seeds, raw Brier at scale `1.00`
+  remains slightly better than the baseline. Keep that negative result.
+- The baseline does not use features, so its scores are identical at every
+  scale on every seed. It is fully tied (`n_tied_examples = 2000`, one unique
+  confidence), so its matched-coverage rows are an index-order reference
+  subset, not a confidence selection. Raw and calibrated models had no
+  confidence ties on these seeds.
+
+Outputs are under `results_shift/` (config, versions, per-seed tables, summary
+tables, reliability diagrams with bin counts, scores-vs-severity plots, and
+accepted-error-vs-coverage plots).
+
+### Shift-test limitations
+
+- Additive Gaussian feature noise with fixed labels is a narrow synthetic
+  stressor.
+- One model, one calibrator, five seeds, four scales.
+- Training-set standard deviations define the noise; other scale choices were
+  not searched.
+- No claim of general shift robustness or of any operational system.
+
 ## AI assistance disclosure
 
-ChatGPT assisted with experiment planning. Cursor assisted with code, tests,
-and documentation. The numerical results above were produced by the documented
-commands in this project's `.venv`. This disclosure does not claim that the
-repository author independently reviewed the code or results.
+ChatGPT assisted with experiment planning, including the original calibration
+demo and this feature-corruption extension. Cursor assisted with code, tests,
+and documentation. Numerical results were produced by the documented commands
+in this project's `.venv`. This disclosure does not claim that the repository
+author independently reviewed the code or results.
 
 ## Your interpretation
 Sigmoid calibration improved Brier score and log loss across all five tested seeds, while classification accuracy remained mixed. This shows that improving probability estimates does not necessarily improve the number of correct classifications.

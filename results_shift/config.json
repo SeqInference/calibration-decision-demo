@@ -1,0 +1,63 @@
+{
+  "dataset": "sklearn.datasets.make_classification (synthetic)",
+  "n_samples": 10000,
+  "n_features": 20,
+  "n_informative": 10,
+  "n_redundant": 5,
+  "weights": [
+    0.7,
+    0.3
+  ],
+  "class_sep": 0.8,
+  "flip_y": 0.05,
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "train_size": 0.6,
+  "calib_size": 0.2,
+  "test_size": 0.2,
+  "base_estimator": "GaussianNB",
+  "calibration": "sigmoid (Platt scaling) on a frozen/prefit GaussianNB",
+  "baseline": "constant probability equal to training positive-class frequency",
+  "evaluation_split": "untouched test partition only",
+  "confidence": "max(p, 1-p)",
+  "confidence_thresholds": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9
+  ],
+  "threshold_selection": "predefined; not tuned on test results",
+  "reliability_bins": 10,
+  "experiment": "synthetic feature-corruption stress test",
+  "label_handling": "test labels are unchanged (measurement corruption)",
+  "noise_scales": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "noise_model": "X_test + scale * train_feature_std * Z, Z ~ N(0,1) iid",
+  "train_std_ddof": 0,
+  "corruption_rng": {
+    "type": "numpy.random.Generator",
+    "bit_generator": "PCG64",
+    "seed_sequence": "numpy.random.SeedSequence([seed, CORRUPTION_STREAM_KEY])",
+    "stream_key": 1397246278,
+    "stream_key_meaning": "ASCII SHIF; independent of sklearn RNGs"
+  },
+  "noise_reuse": "one standard-normal array per seed, reused across scales",
+  "model_policy": "fit once on train/calib; freeze across corruption conditions",
+  "matched_coverages": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "matched_coverage_note": "Retrospective diagnostic: rank already-scored test rows by confidence, breaking ties by original dataset row index. Not a deployment-ready threshold."
+}

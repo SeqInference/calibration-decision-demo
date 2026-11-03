@@ -1,0 +1,1995 @@
+{
+  "seed": 45,
+  "partition_counts": {
+    "n_total": 10000,
+    "n_train": 6000,
+    "n_calib": 2000,
+    "n_test": 2000,
+    "train_positive": 1860,
+    "calib_positive": 620,
+    "test_positive": 620
+  },
+  "train_positive_rate": 0.31,
+  "train_feature_stds": [
+    2.1999802029077697,
+    4.584035624887246,
+    1.0241494795048047,
+    4.152387059672698,
+    2.0385176119334525,
+    1.9780708875888913,
+    1.005268045175588,
+    1.923684347411227,
+    0.9965275846909653,
+    2.1531905432282312,
+    1.951993605974563,
+    0.9827731760516708,
+    3.995527723692333,
+    1.021485760134235,
+    1.8242076858981164,
+    2.077806505621064,
+    3.260103186774675,
+    2.0337342162602887,
+    2.9519851344910712,
+    1.8032341980928288
+  ],
+  "corruption_rng": {
+    "seed": 45,
+    "stream_key": 1397246278,
+    "seed_sequence": [
+      45,
+      1397246278
+    ]
+  },
+  "calibration_api": "CalibratedClassifierCV(FrozenEstimator(...), method='sigmoid')",
+  "base_parameters_frozen": true,
+  "conditions": {
+    "0.00": {
+      "noise_scale": 0.0,
+      "methods": {
+        "raw": {
+          "method": "raw",
+          "metrics": {
+            "brier_score": 0.11809537127513894,
+            "log_loss": 0.3983459092834123,
+            "accuracy": 0.84
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.84,
+              "accepted_error_rate": 0.16000000000000003
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.925,
+              "accepted_count": 1850,
+              "accepted_accuracy": 0.8654054054054054,
+              "accepted_error_rate": 0.13459459459459455
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.8435,
+              "accepted_count": 1687,
+              "accepted_accuracy": 0.8838174273858921,
+              "accepted_error_rate": 0.11618257261410792
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.739,
+              "accepted_count": 1478,
+              "accepted_accuracy": 0.9100135317997293,
+              "accepted_error_rate": 0.08998646820027068
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.5995,
+              "accepted_count": 1199,
+              "accepted_accuracy": 0.9291075896580484,
+              "accepted_error_rate": 0.0708924103419516
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.30409994771444543,
+            "std": 0.348136116663763,
+            "min": 3.6003152451696283e-06,
+            "max": 0.9999906352730026
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.964,
+              "accepted_error_rate": 0.03600000000000003,
+              "cutoff_confidence": 0.9852334339177466,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.938,
+              "accepted_error_rate": 0.062000000000000055,
+              "cutoff_confidence": 0.9367974664170258,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.906,
+              "accepted_error_rate": 0.09399999999999997,
+              "cutoff_confidence": 0.7927022174779859,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.84,
+              "accepted_error_rate": 0.16000000000000003,
+              "cutoff_confidence": 0.501527876264108,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "calibrated": {
+          "method": "calibrated",
+          "metrics": {
+            "brier_score": 0.1177540457039926,
+            "log_loss": 0.3837935323489659,
+            "accuracy": 0.8395
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.8395,
+              "accepted_error_rate": 0.16049999999999998
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.934,
+              "accepted_count": 1868,
+              "accepted_accuracy": 0.8624197002141327,
+              "accepted_error_rate": 0.13758029978586728
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.865,
+              "accepted_count": 1730,
+              "accepted_accuracy": 0.8803468208092485,
+              "accepted_error_rate": 0.11965317919075147
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.759,
+              "accepted_count": 1518,
+              "accepted_accuracy": 0.9104084321475626,
+              "accepted_error_rate": 0.08959156785243738
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.412,
+              "accepted_count": 824,
+              "accepted_accuracy": 0.9393203883495146,
+              "accepted_error_rate": 0.06067961165048541
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.3106964135445713,
+            "std": 0.3027187120868929,
+            "min": 0.07600593042102702,
+            "max": 0.9000633480820451
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.954,
+              "accepted_error_rate": 0.04600000000000004,
+              "cutoff_confidence": 0.9161967357682156,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.942,
+              "accepted_error_rate": 0.05800000000000005,
+              "cutoff_confidence": 0.893086739495865,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.9113333333333333,
+              "accepted_error_rate": 0.08866666666666667,
+              "cutoff_confidence": 0.8058541529123573,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.8395,
+              "accepted_error_rate": 0.16049999999999998,
+              "cutoff_confidence": 0.5033327052934573,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "baseline": {
+          "method": "baseline",
+          "metrics": {
+            "brier_score": 0.21389999999999992,
+            "log_loss": 0.619100664425587,
+            "accuracy": 0.69
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31,
+            "std": 0.0,
+            "min": 0.31,
+            "max": 0.31
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.71,
+              "accepted_error_rate": 0.29000000000000004,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.689,
+              "accepted_error_rate": 0.31100000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.6886666666666666,
+              "accepted_error_rate": 0.31133333333333335,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            }
+          ]
+        }
+      },
+      "reliability": {
+        "raw": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            951,
+            199,
+            133,
+            89,
+            76,
+            74,
+            74,
+            76,
+            80,
+            248
+          ],
+          "mean_predicted": [
+            0.02900174540164099,
+            0.14579691997471572,
+            0.24469589549695459,
+            0.3484772014438779,
+            0.45200705083871434,
+            0.5428008358771169,
+            0.6514876855504947,
+            0.7538929805372439,
+            0.8538500580735867,
+            0.9665841364163656
+          ],
+          "fraction_positive": [
+            0.06624605678233439,
+            0.1507537688442211,
+            0.2556390977443609,
+            0.3595505617977528,
+            0.4605263157894737,
+            0.5135135135135135,
+            0.7162162162162162,
+            0.618421052631579,
+            0.775,
+            0.9112903225806451
+          ]
+        },
+        "calibrated": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            814,
+            395,
+            123,
+            71,
+            78,
+            54,
+            67,
+            89,
+            299,
+            10
+          ],
+          "mean_predicted": [
+            0.08332244392858536,
+            0.13581658030783184,
+            0.24355209207939754,
+            0.3478587415105798,
+            0.4506515890420137,
+            0.5520506420873575,
+            0.6505272380738941,
+            0.7520267444432435,
+            0.8722016761733983,
+            0.9000365536423424
+          ],
+          "fraction_positive": [
+            0.06142506142506143,
+            0.1341772151898734,
+            0.3008130081300813,
+            0.43661971830985913,
+            0.5128205128205128,
+            0.5555555555555556,
+            0.7164179104477612,
+            0.6179775280898876,
+            0.8896321070234113,
+            1.0
+          ]
+        },
+        "baseline": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            0,
+            0,
+            0,
+            2000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_predicted": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fraction_positive": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "0.25": {
+      "noise_scale": 0.25,
+      "methods": {
+        "raw": {
+          "method": "raw",
+          "metrics": {
+            "brier_score": 0.12195193554302838,
+            "log_loss": 0.41723221913789665,
+            "accuracy": 0.8375
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.8375,
+              "accepted_error_rate": 0.16249999999999998
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.923,
+              "accepted_count": 1846,
+              "accepted_accuracy": 0.8645720476706392,
+              "accepted_error_rate": 0.13542795232936078
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.8355,
+              "accepted_count": 1671,
+              "accepted_accuracy": 0.8803111909036505,
+              "accepted_error_rate": 0.11968880909634949
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.74,
+              "accepted_count": 1480,
+              "accepted_accuracy": 0.902027027027027,
+              "accepted_error_rate": 0.09797297297297303
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.5935,
+              "accepted_count": 1187,
+              "accepted_accuracy": 0.9250210614995787,
+              "accepted_error_rate": 0.07497893850042125
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31305565275316544,
+            "std": 0.35282102744003124,
+            "min": 1.297591817329844e-06,
+            "max": 0.9999896473101305
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.962,
+              "accepted_error_rate": 0.038000000000000034,
+              "cutoff_confidence": 0.9859610652749947,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.93,
+              "accepted_error_rate": 0.06999999999999995,
+              "cutoff_confidence": 0.9387488898708622,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.9,
+              "accepted_error_rate": 0.09999999999999998,
+              "cutoff_confidence": 0.7904737279608467,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.8375,
+              "accepted_error_rate": 0.16249999999999998,
+              "cutoff_confidence": 0.5010809300874776,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "calibrated": {
+          "method": "calibrated",
+          "metrics": {
+            "brier_score": 0.12032016668590084,
+            "log_loss": 0.3913751687491839,
+            "accuracy": 0.8375
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.8375,
+              "accepted_error_rate": 0.16249999999999998
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.9345,
+              "accepted_count": 1869,
+              "accepted_accuracy": 0.8592830390583199,
+              "accepted_error_rate": 0.14071696094168007
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.855,
+              "accepted_count": 1710,
+              "accepted_accuracy": 0.8818713450292398,
+              "accepted_error_rate": 0.1181286549707602
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.7565,
+              "accepted_count": 1513,
+              "accepted_accuracy": 0.8982154659616656,
+              "accepted_error_rate": 0.10178453403833443
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.4125,
+              "accepted_count": 825,
+              "accepted_accuracy": 0.9345454545454546,
+              "accepted_error_rate": 0.06545454545454543
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31911787582297346,
+            "std": 0.3066958178609489,
+            "min": 0.07600517101542849,
+            "max": 0.9000629307741079
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.956,
+              "accepted_error_rate": 0.04400000000000004,
+              "cutoff_confidence": 0.9162162590198566,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.934,
+              "accepted_error_rate": 0.06599999999999995,
+              "cutoff_confidence": 0.8915801858473292,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.9006666666666666,
+              "accepted_error_rate": 0.09933333333333338,
+              "cutoff_confidence": 0.8047777104248375,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.8375,
+              "accepted_error_rate": 0.16249999999999998,
+              "cutoff_confidence": 0.5002242888320351,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "baseline": {
+          "method": "baseline",
+          "metrics": {
+            "brier_score": 0.21389999999999992,
+            "log_loss": 0.619100664425587,
+            "accuracy": 0.69
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31,
+            "std": 0.0,
+            "min": 0.31,
+            "max": 0.31
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.71,
+              "accepted_error_rate": 0.29000000000000004,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.689,
+              "accepted_error_rate": 0.31100000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.6886666666666666,
+              "accepted_error_rate": 0.31133333333333335,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            }
+          ]
+        }
+      },
+      "reliability": {
+        "raw": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            933,
+            203,
+            109,
+            103,
+            83,
+            71,
+            72,
+            82,
+            90,
+            254
+          ],
+          "mean_predicted": [
+            0.028164800121325228,
+            0.13972568255837142,
+            0.24808992668482982,
+            0.35292339556242336,
+            0.4537408350743151,
+            0.5526870700577697,
+            0.6518319226194286,
+            0.7495239391019781,
+            0.8559362469290775,
+            0.9675115225919727
+          ],
+          "fraction_positive": [
+            0.06859592711682744,
+            0.14285714285714285,
+            0.23853211009174313,
+            0.2815533980582524,
+            0.4819277108433735,
+            0.5070422535211268,
+            0.7083333333333334,
+            0.6463414634146342,
+            0.7,
+            0.9015748031496063
+          ]
+        },
+        "calibrated": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            815,
+            370,
+            107,
+            92,
+            67,
+            64,
+            67,
+            90,
+            318,
+            10
+          ],
+          "mean_predicted": [
+            0.08326408485183164,
+            0.13454469174133282,
+            0.24911721735098646,
+            0.3461985365394198,
+            0.4472904760070219,
+            0.550321900365031,
+            0.6528725647857757,
+            0.7474527607139057,
+            0.8707090995070641,
+            0.9000411465251569
+          ],
+          "fraction_positive": [
+            0.06625766871165645,
+            0.13783783783783785,
+            0.18691588785046728,
+            0.44565217391304346,
+            0.47761194029850745,
+            0.53125,
+            0.7014925373134329,
+            0.6888888888888889,
+            0.8459119496855346,
+            1.0
+          ]
+        },
+        "baseline": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            0,
+            0,
+            0,
+            2000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_predicted": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fraction_positive": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "0.50": {
+      "noise_scale": 0.5,
+      "methods": {
+        "raw": {
+          "method": "raw",
+          "metrics": {
+            "brier_score": 0.13648837167258962,
+            "log_loss": 0.4701844306894379,
+            "accuracy": 0.8105
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.8105,
+              "accepted_error_rate": 0.1895
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.9305,
+              "accepted_count": 1861,
+              "accepted_accuracy": 0.8387963460505105,
+              "accepted_error_rate": 0.16120365394948954
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.8375,
+              "accepted_count": 1675,
+              "accepted_accuracy": 0.8650746268656716,
+              "accepted_error_rate": 0.1349253731343284
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.7395,
+              "accepted_count": 1479,
+              "accepted_accuracy": 0.8837052062204191,
+              "accepted_error_rate": 0.11629479377958085
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.592,
+              "accepted_count": 1184,
+              "accepted_accuracy": 0.9087837837837838,
+              "accepted_error_rate": 0.09121621621621623
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.3306474249373425,
+            "std": 0.3619886683659205,
+            "min": 2.601730232166316e-07,
+            "max": 0.9999950670378038
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.946,
+              "accepted_error_rate": 0.05400000000000005,
+              "cutoff_confidence": 0.9871069595359346,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.919,
+              "accepted_error_rate": 0.08099999999999996,
+              "cutoff_confidence": 0.9386110258130432,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.8813333333333333,
+              "accepted_error_rate": 0.1186666666666667,
+              "cutoff_confidence": 0.7898801756184082,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.8105,
+              "accepted_error_rate": 0.1895,
+              "cutoff_confidence": 0.5008902198181784,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "calibrated": {
+          "method": "calibrated",
+          "metrics": {
+            "brier_score": 0.13306053793498973,
+            "log_loss": 0.42314027106392565,
+            "accuracy": 0.815
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.815,
+              "accepted_error_rate": 0.18500000000000005
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.9365,
+              "accepted_count": 1873,
+              "accepted_accuracy": 0.8350240256273358,
+              "accepted_error_rate": 0.1649759743726642
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.854,
+              "accepted_count": 1708,
+              "accepted_accuracy": 0.8624121779859485,
+              "accepted_error_rate": 0.1375878220140515
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.753,
+              "accepted_count": 1506,
+              "accepted_accuracy": 0.8877822045152722,
+              "accepted_error_rate": 0.11221779548472777
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.3985,
+              "accepted_count": 797,
+              "accepted_accuracy": 0.93099121706399,
+              "accepted_error_rate": 0.06900878293600998
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.3347386819496494,
+            "std": 0.3149422059343522,
+            "min": 0.07600482889166688,
+            "max": 0.9000652200064363
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.94,
+              "accepted_error_rate": 0.06000000000000005,
+              "cutoff_confidence": 0.916391497495272,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.927,
+              "accepted_error_rate": 0.07299999999999995,
+              "cutoff_confidence": 0.8910305261192868,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.888,
+              "accepted_error_rate": 0.11199999999999999,
+              "cutoff_confidence": 0.802792717143489,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.815,
+              "accepted_error_rate": 0.18500000000000005,
+              "cutoff_confidence": 0.5007352586024809,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "baseline": {
+          "method": "baseline",
+          "metrics": {
+            "brier_score": 0.21389999999999992,
+            "log_loss": 0.619100664425587,
+            "accuracy": 0.69
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31,
+            "std": 0.0,
+            "min": 0.31,
+            "max": 0.31
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.71,
+              "accepted_error_rate": 0.29000000000000004,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.689,
+              "accepted_error_rate": 0.31100000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.6886666666666666,
+              "accepted_error_rate": 0.31133333333333335,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            }
+          ]
+        }
+      },
+      "reliability": {
+        "raw": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            907,
+            191,
+            116,
+            96,
+            73,
+            66,
+            90,
+            80,
+            104,
+            277
+          ],
+          "mean_predicted": [
+            0.027911671846697385,
+            0.1427021604846413,
+            0.24754700622845444,
+            0.3558091935771288,
+            0.44829773391456224,
+            0.5550575446847138,
+            0.6515218668274592,
+            0.7526821968941169,
+            0.8535887710923616,
+            0.9706332385079367
+          ],
+          "fraction_positive": [
+            0.07497243660418963,
+            0.14659685863874344,
+            0.23275862068965517,
+            0.2916666666666667,
+            0.547945205479452,
+            0.4090909090909091,
+            0.4888888888888889,
+            0.6625,
+            0.6538461538461539,
+            0.855595667870036
+          ]
+        },
+        "calibrated": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            783,
+            365,
+            109,
+            84,
+            59,
+            68,
+            81,
+            93,
+            344,
+            14
+          ],
+          "mean_predicted": [
+            0.08287365594362084,
+            0.13508363038454954,
+            0.2472773005216871,
+            0.34210085570361004,
+            0.44288502522631207,
+            0.5571239507756557,
+            0.6535972568894753,
+            0.7548531285663836,
+            0.871610641933127,
+            0.9000459884501562
+          ],
+          "fraction_positive": [
+            0.070242656449553,
+            0.13424657534246576,
+            0.27522935779816515,
+            0.4166666666666667,
+            0.4406779661016949,
+            0.4852941176470588,
+            0.5185185185185185,
+            0.6129032258064516,
+            0.811046511627907,
+            1.0
+          ]
+        },
+        "baseline": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            0,
+            0,
+            0,
+            2000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_predicted": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fraction_positive": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "1.00": {
+      "noise_scale": 1.0,
+      "methods": {
+        "raw": {
+          "method": "raw",
+          "metrics": {
+            "brier_score": 0.19000963350306851,
+            "log_loss": 0.7024658638668054,
+            "accuracy": 0.7475
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.7475,
+              "accepted_error_rate": 0.25249999999999995
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.918,
+              "accepted_count": 1836,
+              "accepted_accuracy": 0.7701525054466231,
+              "accepted_error_rate": 0.22984749455337694
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.837,
+              "accepted_count": 1674,
+              "accepted_accuracy": 0.7885304659498208,
+              "accepted_error_rate": 0.2114695340501792
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.743,
+              "accepted_count": 1486,
+              "accepted_accuracy": 0.8129205921938089,
+              "accepted_error_rate": 0.18707940780619114
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.5945,
+              "accepted_count": 1189,
+              "accepted_accuracy": 0.8334735071488646,
+              "accepted_error_rate": 0.1665264928511354
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.38600664073751434,
+            "std": 0.38557294533119946,
+            "min": 7.17723197843703e-09,
+            "max": 0.9999998297412421
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.9,
+              "accepted_error_rate": 0.09999999999999998,
+              "cutoff_confidence": 0.9923900341135815,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.848,
+              "accepted_error_rate": 0.15200000000000002,
+              "cutoff_confidence": 0.9413933243761987,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.8086666666666666,
+              "accepted_error_rate": 0.19133333333333336,
+              "cutoff_confidence": 0.7931318905737614,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.7475,
+              "accepted_error_rate": 0.25249999999999995,
+              "cutoff_confidence": 0.5000726975869119,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "calibrated": {
+          "method": "calibrated",
+          "metrics": {
+            "brier_score": 0.17772065294245418,
+            "log_loss": 0.5408602772736331,
+            "accuracy": 0.752
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.752,
+              "accepted_error_rate": 0.248
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 0.9285,
+              "accepted_count": 1857,
+              "accepted_accuracy": 0.7727517501346257,
+              "accepted_error_rate": 0.22724824986537429
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.856,
+              "accepted_count": 1712,
+              "accepted_accuracy": 0.7926401869158879,
+              "accepted_error_rate": 0.2073598130841121
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.749,
+              "accepted_count": 1498,
+              "accepted_accuracy": 0.8197596795727636,
+              "accepted_error_rate": 0.18024032042723637
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.3625,
+              "accepted_count": 725,
+              "accepted_accuracy": 0.9062068965517242,
+              "accepted_error_rate": 0.09379310344827585
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.38226813661797304,
+            "std": 0.3344382452437674,
+            "min": 0.07600474545800455,
+            "max": 0.900067231680597
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.918,
+              "accepted_error_rate": 0.08199999999999996,
+              "cutoff_confidence": 0.91599622989635,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.864,
+              "accepted_error_rate": 0.136,
+              "cutoff_confidence": 0.8892098212742383,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.8193333333333334,
+              "accepted_error_rate": 0.18066666666666664,
+              "cutoff_confidence": 0.799558928130091,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.752,
+              "accepted_error_rate": 0.248,
+              "cutoff_confidence": 0.5000419175620034,
+              "n_at_cutoff_confidence": 1,
+              "cutoff_tie": false,
+              "n_unique_confidences": 2000,
+              "n_tied_examples": 0,
+              "max_tie_group_size": 1,
+              "n_tie_groups": 0
+            }
+          ]
+        },
+        "baseline": {
+          "method": "baseline",
+          "metrics": {
+            "brier_score": 0.21389999999999992,
+            "log_loss": 0.619100664425587,
+            "accuracy": 0.69
+          },
+          "selective": [
+            {
+              "threshold": 0.5,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.6,
+              "coverage": 1.0,
+              "accepted_count": 2000,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005
+            },
+            {
+              "threshold": 0.7,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.8,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            },
+            {
+              "threshold": 0.9,
+              "coverage": 0.0,
+              "accepted_count": 0,
+              "accepted_accuracy": "unavailable",
+              "accepted_error_rate": "unavailable"
+            }
+          ],
+          "probability_summary": {
+            "mean": 0.31,
+            "std": 0.0,
+            "min": 0.31,
+            "max": 0.31
+          },
+          "matched_coverage": [
+            {
+              "target_coverage": 0.25,
+              "accepted_count": 500,
+              "realized_coverage": 0.25,
+              "accepted_accuracy": 0.71,
+              "accepted_error_rate": 0.29000000000000004,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.5,
+              "accepted_count": 1000,
+              "realized_coverage": 0.5,
+              "accepted_accuracy": 0.689,
+              "accepted_error_rate": 0.31100000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 0.75,
+              "accepted_count": 1500,
+              "realized_coverage": 0.75,
+              "accepted_accuracy": 0.6886666666666666,
+              "accepted_error_rate": 0.31133333333333335,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            },
+            {
+              "target_coverage": 1.0,
+              "accepted_count": 2000,
+              "realized_coverage": 1.0,
+              "accepted_accuracy": 0.69,
+              "accepted_error_rate": 0.31000000000000005,
+              "cutoff_confidence": 0.69,
+              "n_at_cutoff_confidence": 2000,
+              "cutoff_tie": true,
+              "n_unique_confidences": 1,
+              "n_tied_examples": 2000,
+              "max_tie_group_size": 2000,
+              "n_tie_groups": 1
+            }
+          ]
+        }
+      },
+      "reliability": {
+        "raw": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            793,
+            191,
+            110,
+            86,
+            75,
+            89,
+            76,
+            78,
+            106,
+            396
+          ],
+          "mean_predicted": [
+            0.024305691122056834,
+            0.145166011799271,
+            0.2504435762776676,
+            0.3491508983096896,
+            0.4507054708534516,
+            0.5521346220773715,
+            0.6511372443038232,
+            0.7572958648789825,
+            0.8503448117681595,
+            0.9742460600061339
+          ],
+          "fraction_positive": [
+            0.10970996216897856,
+            0.16230366492146597,
+            0.24545454545454545,
+            0.2441860465116279,
+            0.32,
+            0.33707865168539325,
+            0.3815789473684211,
+            0.3717948717948718,
+            0.5377358490566038,
+            0.7196969696969697
+          ]
+        },
+        "calibrated": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            689,
+            339,
+            115,
+            72,
+            61,
+            82,
+            73,
+            99,
+            434,
+            36
+          ],
+          "mean_predicted": [
+            0.08154855556405528,
+            0.13676907361534033,
+            0.24832964901892315,
+            0.3508689717154111,
+            0.44930384709786175,
+            0.5455051799059287,
+            0.6535668554795697,
+            0.7621455973681824,
+            0.8766374662989705,
+            0.9000475696543965
+          ],
+          "fraction_positive": [
+            0.09579100145137881,
+            0.18289085545722714,
+            0.20869565217391303,
+            0.3472222222222222,
+            0.3114754098360656,
+            0.32926829268292684,
+            0.4246575342465753,
+            0.3838383838383838,
+            0.6774193548387096,
+            0.9444444444444444
+          ]
+        },
+        "baseline": {
+          "bin_edges": [
+            0.0,
+            0.1,
+            0.2,
+            0.30000000000000004,
+            0.4,
+            0.5,
+            0.6000000000000001,
+            0.7000000000000001,
+            0.8,
+            0.9,
+            1.0
+          ],
+          "counts": [
+            0,
+            0,
+            0,
+            2000,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "mean_predicted": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "fraction_positive": [
+            null,
+            null,
+            null,
+            0.31,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    }
+  }
+}
